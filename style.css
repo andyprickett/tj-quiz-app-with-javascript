@@ -1,3 +1,66 @@
+* {
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: normal;
+  color: black;
+  text-decoration: none;
+  text-align: center;
+}
+
+h1 {
+  font-size: 25px;
+  background-color: #3B4252;
+  color: white;
+  padding: 60px;
+}
+
+a {
+  border: 1px solid #C95F70;
+  padding: 10px 25px;
+  color: #C95F70;
+  border-radius: 5px;
+  margin-top: 50px;
+  display: inline-block;
+}
+
+a:hover {
+  background-color: #C95F70;
+  color: white;
+}
+
+h2 {
+  font-size: 30px;
+  padding: 40px;
+}
+
+.answer {
+  border: 2px solid #000;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  text-indent: -999999px;
+}
+
+.answer.blue {
+  background-color: #93C8D0;
+}
+
+.answer.yellow {
+  background-color: #E5DA2A;
+}
+
+.answer.orange {
+  background-color: #FE9441;
+}
+
+.answer.green {
+  background-color: #89C893;
+}
+
 .quiz,
 .summary {
   display: none;
@@ -13,5 +76,20 @@
 }
 
 .selected {
-  background-color: yellow;
+  background-image: url('https://cdn.pixabay.com/photo/2014/03/25/16/58/check-mark-297738_1280.png');
+  background-position: center center;
+  background-size: 50%;
+  background-repeat: no-repeat;
+}
+
+img {
+  height: 200px;
+  border: 5px solid #000;
+  border-radius: 5px;
+  margin-top: 25px;
+  display: none;
+}
+
+img.show {
+  display: inline-block;
 }

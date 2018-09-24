@@ -24,6 +24,7 @@ let questions = [
 ];
 
 $(document).ready(function() {
+  
   $(".start a").click(function(e) {
     e.preventDefault();
     $(".start").hide();
@@ -50,6 +51,7 @@ $(document).ready(function() {
     e.preventDefault();
     restartQuiz();
   });
+  
 });
 
 function showQuestion() {
@@ -57,7 +59,7 @@ function showQuestion() {
   $(".quiz h2").text(question.title);
   $(".quiz ul").html("");
   for (var i = 0; i < question.answers.length; i++) {
-    $(".quiz ul").append(`<li id="${i}">${question.answers[i]}</li>`);
+    $(".quiz ul").append(`<li id="${i}" class="answer ${question.answers[i]}">${question.answers[i]}</li>`);
   }
 }
 
@@ -77,9 +79,13 @@ function checkAnswer(guess) {
 function showSummary() {
   $(".quiz").hide();
   $(".summary").show();
-  $(".summary p").text(
-    `Congrats you scored ${score} out of ${questions.length} correct!`
-  );
+  $(".summary p").text(`You scored ${score} out of ${questions.length} correct.`);
+  $("img.show").removeClass("show");
+  if (score >= 3) {
+    $(".happy-group").addClass("show");
+  } else {
+    $(".sad-pikachu").addClass("show");
+  }
 }
 
 function restartQuiz() {
